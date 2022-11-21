@@ -73,6 +73,21 @@ const inventory = [
 - blurb(book)
 */
 
+function helloWorld() {
+  console.log('hi there')
+  return "Hello World"
+}
+
+console.log(helloWorld())
+
+function formatPrice(price) {
+  return '$' + Number.parseFloat(price).toFixed(2);
+}
+
+const book = inventory[0];
+
+console.log(formatPrice(book.price))
+
 // 💡 Arrow functions vs regular functions
 
 // ✅ create an arrow function version of the formatPrice function
@@ -83,6 +98,16 @@ const inventory = [
 // 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
 
 
+
+function blurb(book) {
+  const title = book.title;
+  const author = book.author;
+  const price = formatPrice(book.price);
+
+  console.log(`${title} by ${author} is on sale for ${price}`)
+}
+
+blurb(book);
 
 // 💡 Difference between Block scope, Function scope, and Global scope
 
